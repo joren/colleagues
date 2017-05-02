@@ -1,0 +1,63 @@
+GIT
+  remote: git://github.com/sinatra/sinatra.git
+  revision: 8fdd35c731ec6915bae393c6383b2357450665f0
+  specs:
+    rack-protection (2.0.0.rc2)
+      rack
+    sinatra (2.0.0.rc2)
+      mustermann (~> 1.0)
+      rack (~> 2.0)
+      rack-protection (= 2.0.0.rc2)
+      tilt (~> 2.0)
+
+GEM
+  remote: https://rubygems.org/
+  specs:
+    activesupport (5.0.2)
+      concurrent-ruby (~> 1.0, >= 1.0.2)
+      i18n (~> 0.7)
+      minitest (~> 5.1)
+      tzinfo (~> 1.1)
+    concurrent-ruby (1.0.5)
+    faraday (0.12.1)
+      multipart-post (>= 1.2, < 3)
+    faraday_middleware (0.11.0.1)
+      faraday (>= 0.7.4, < 1.0)
+    gli (2.16.0)
+    haml (5.0.0)
+      temple (>= 0.8.0)
+      tilt
+    hashie (3.5.5)
+    i18n (0.8.1)
+    json (2.1.0)
+    minitest (5.10.1)
+    multipart-post (2.0.0)
+    mustermann (1.0.0)
+    rack (2.0.1)
+    slack-ruby-client (0.8.0)
+      activesupport
+      faraday (>= 0.9)
+      faraday_middleware
+      gli
+      hashie
+      json
+      websocket-driver
+    temple (0.8.0)
+    thread_safe (0.3.6)
+    tilt (2.0.7)
+    tzinfo (1.2.3)
+      thread_safe (~> 0.1)
+    websocket-driver (0.6.5)
+      websocket-extensions (>= 0.1.0)
+    websocket-extensions (0.1.2)
+
+PLATFORMS
+  ruby
+
+DEPENDENCIES
+  haml
+  sinatra!
+  slack-ruby-client (~> 0.8.0)
+
+BUNDLED WITH
+   1.14.6
