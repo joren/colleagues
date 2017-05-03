@@ -8,7 +8,7 @@ class App < Sinatra::Base
 
   get '/' do
     client = Slack::Web::Client.new
-    @members = client.users_list.members
+    @members = client.users_list.members.select { |m| m.is_bot == false }
     haml :index
   end
 end
