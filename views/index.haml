@@ -1,6 +1,6 @@
 - @members.each do |member|
-  .profile{ style: "float:left;height:240px;" }
-    %img{ src: member.profile.image_192 }
+  .profile{ style: "float:left;height:210px;" }
+    %img{ src: member.profile.image_192, width: 148, height: 148 }
     %br
     - name = member.profile.real_name_normalized.present? ? member.profile.real_name_normalized : member.name
     %strong= name
