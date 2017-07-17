@@ -3,7 +3,7 @@
     %img{ src: member.profile.image_192, width: 148, height: 148 }
     %br
     - name = member.profile.real_name_normalized.present? ? member.profile.real_name_normalized : member.name
-    %strong= name
+    %strong= Sanitize.fragment(name)
     - if member.profile.title.present?
       %br
-      = member.profile.title
+      = Sanitize.fragment(member.profile.title)
