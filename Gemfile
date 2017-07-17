@@ -1,5 +1,5 @@
 source 'https://rubygems.org'
-gem 'sinatra', :github => "sinatra/sinatra"
+gem 'sinatra', "~> 2.0.0"
 gem "slack-ruby-client", "~> 0.8.0"
 
 # other dependencies

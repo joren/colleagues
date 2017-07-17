@@ -1,15 +1,3 @@
-GIT
-  remote: git://github.com/sinatra/sinatra.git
-  revision: 8fdd35c731ec6915bae393c6383b2357450665f0
-  specs:
-    rack-protection (2.0.0.rc2)
-      rack
-    sinatra (2.0.0.rc2)
-      mustermann (~> 1.0)
-      rack (~> 2.0)
-      rack-protection (= 2.0.0.rc2)
-      tilt (~> 2.0)
-
 GEM
   remote: https://rubygems.org/
   specs:
@@ -33,7 +21,14 @@ GEM
     minitest (5.10.1)
     multipart-post (2.0.0)
     mustermann (1.0.0)
-    rack (2.0.1)
+    rack (2.0.3)
+    rack-protection (2.0.0)
+      rack
+    sinatra (2.0.0)
+      mustermann (~> 1.0)
+      rack (~> 2.0)
+      rack-protection (= 2.0.0)
+      tilt (~> 2.0)
     slack-ruby-client (0.8.0)
       activesupport
       faraday (>= 0.9)
@@ -56,8 +51,8 @@ PLATFORMS
 
 DEPENDENCIES
   haml
-  sinatra!
+  sinatra (~> 2.0.0)
   slack-ruby-client (~> 0.8.0)
 
 BUNDLED WITH
-   1.14.6
+   1.15.1
