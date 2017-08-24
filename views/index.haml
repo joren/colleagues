@@ -1,9 +1,25 @@
-- @members.each do |member|
-  .profile{ style: "float:left;height:210px;" }
-    %img{ src: member.profile.image_192, width: 148, height: 148 }
-    %br
-    - name = member.profile.real_name_normalized.present? ? member.profile.real_name_normalized : member.name
-    %strong= Sanitize.fragment(name)
-    - if member.profile.title.present?
-      %br
-      = Sanitize.fragment(member.profile.title)
+!!!
+%html
+  %head
+    %meta{ charset: "utf-8" }
+    %meta{ name: "viewport", content: "width=device-width, initial-scale=1, maximum-scale=1" }
+    %title Get to know your colleagues
+    %link{ rel: "stylesheet", href: "/css/uikit.css" }
+    %link{ rel: "stylesheet", href: "/css/app.css" }
+  %body
+    .sf-grid.sf-grid-fluid
+      .sf-row
+        #sidebar.sf-col.sf-xs-2
+          %img{ src: "/logo.png", width: 200, height: 200, alt: "Logo Silverfin" }
+          .sf-h3 Get to know your #{@members.size - 1} colleagues!
+        .sf-col.sf-pad-t-3
+          - @members.each do |member|
+            .profile
+              %img{ src: member.profile.image_192, width: 148, height: 148 }
+              .name
+                - name = member.profile.real_name_normalized.present? ? member.profile.real_name_normalized : member.name
+                %strong= Sanitize.fragment(name)
+                - if member.profile.title.present?
+                  %br
+                  %span.job-title
+                    = Sanitize.fragment(member.profile.title)
