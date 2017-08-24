@@ -1,0 +1,28 @@
+body {
+  color: #f1f3f5;
+  color: #7A8592;
+  font-family: Lato;
+  margin:0;
+}
+
+#sidebar {
+  background-color: #2b374b;
+  text-align: center;
+  color:white;
+}
+
+.profile {
+  float: left;
+  height: 220px;
+  width: 148px;
+  margin-right: 0px;
+  margin-bottom: 6px;
+}
+
+.profile .name {
+  padding:0 6px;
+}
+
+.profile .job-title {
+  overflow: hidden;
+}
