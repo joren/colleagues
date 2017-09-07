@@ -5,21 +5,22 @@
     %meta{ name: "viewport", content: "width=device-width, initial-scale=1, maximum-scale=1" }
     %title Get to know your colleagues
     %link{ rel: "stylesheet", href: "/css/uikit.css" }
-    %link{ rel: "stylesheet", href: "/css/app.css" }
-  %body
+  %body.sf-body.sf-border-box
     .sf-grid.sf-grid-fluid
-      .sf-row
-        #sidebar.sf-col.sf-xs-2
-          %img{ src: "/logo.png", width: 200, height: 200, alt: "Logo Silverfin" }
-          .sf-h3 Get to know your #{@members.size - 1} colleagues!
-        .sf-col.sf-pad-t-3
-          - @members.each do |member|
-            .profile
-              %img{ src: member.profile.image_192, width: 148, height: 148 }
-              .name
-                - name = member.profile.real_name_normalized.present? ? member.profile.real_name_normalized : member.name
-                %strong= Sanitize.fragment(name)
-                - if member.profile.title.present?
-                  %br
-                  %span.job-title
-                    = Sanitize.fragment(member.profile.title)
+      .sf-row.sf-row-eq-height
+        .sf-col.sf-xs-12.sf-md-3.sf-bg-secondary.sf-align-c.sf-pad-4
+          %img.sf-below-3.sf-pad-3{ src: "/logo.svg", width: 200, height: 200, alt: "Logo Silverfin" }
+          .sf-font-xl.sf-c-secondary-lighter.sf-fwb Get to know your #{@members.size - 1} colleagues!
+        .sf-col.sf-pad-t-3.sf-below-6
+          .sf-grid
+            .sf-row.sf-row-eq-height.sf-pad-t-3
+              - @members.each do |member|
+                .sf-col.sf-xs-6.sf-sm-4.sf-md-2
+                  .sf-layer-white.sf-full-height
+                    %img.sf-align-c.sf-full{ src: member.profile.image_192 }
+                    .sf-pad-3
+                      - name = member.profile.real_name_normalized.present? ? member.profile.real_name_normalized : member.name
+                      %strong= Sanitize.fragment(name)
+                      - if member.profile.title.present?
+                        %br
+                        = Sanitize.fragment(member.profile.title)
