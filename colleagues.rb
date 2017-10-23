@@ -3,6 +3,8 @@ require "slack"
 require "sanitize"
 
 class App < Sinatra::Base
+  set :bind, ENV['BIND'] || 'localhost'
+
   Slack.configure do |config|
     config.token = ENV["SLACK_TOKEN"]
   end
